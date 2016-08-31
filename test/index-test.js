@@ -32,17 +32,7 @@ describe('Selectors', () => {
       expect(window.alert).toHaveBeenCalled()
     })
 
-    it('does not alert if another key is pressed', () => {
-      window.alert = expect.createSpy()
-
-      window.pressIt();
-
-      const input = window.$('#typing');
-      const event = window.$.Event('keydown', { which: 70 })
-      input.trigger(event)
-
-      expect(window.alert).toNotHaveBeenCalled()
-    })
+ 
   })
 
   it('submitIt() binds an event that alerts "Your form is going to be submitted now." when the form is submitted', function() {
